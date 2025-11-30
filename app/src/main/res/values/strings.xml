@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">DouyinPoster</string>
+
+    <!-- MainActivity 使用的字符串 -->
+    <string name="take_photo">拍照</string>
+    <string name="select_from_album">从相册中选择</string>
+    <string name="select_image_source">选择图片来源</string>
+
+    <!-- PostActivity UI 文本 -->
+    <string name="cancel">取消</string>
+    <string name="publish_work">发作品</string>
+    <string name="edit_cover">编辑封面</string>
+    <string name="add_title">添加标题</string>
+    <string name="add_description">添加作品描述...</string>
+    <string name="hashtag"># 话题</string>
+    <string name="at_friend">@ 朋友</string>
+    <string name="where_are_you">你在哪里</string>
+    <string name="back_button_description">返回上一个页面</string>
+    <string name="main_image_preview_description">主图片预览</string>
+    <string name="add_image_description">添加图片占位符</string>
+    <string name="add_image">添加图片</string>
+    <string name="location_icon_description">位置图标</string>
+    <string name="chevron_right_icon_description">向右箭头</string>
+    <string name="thumbnail_image_description">图片缩略图</string>
+    <string name="delete_image_description">删除图片</string>
+    <string name="delete_confirmation_title">确认删除</string>
+    <string name="delete_confirmation_message">您确定要删除这张图片吗？</string>
+    <string name="confirm">确定</string>
+    <string name="title_select_topic">选择话题</string>
+    <string name="title_select_user">选择朋友</string>
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- 1. 返回按钮 (左上角) -->
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_back"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/back_button_description" />
+
+    <!-- 2. 主预览区容器 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_preview_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/thumbnail_scroll_view"
+        app:layout_constraintDimensionRatio="H,9:16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_button"
+        app:layout_constraintVertical_bias="0.0"
+        tools:background="#EFEFEF">
+
+        <!-- 2.1 用于显示已选图片的 ImageView -->
+        <ImageView
+            android:id="@+id/main_preview_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/main_image_preview_description"
+            android:visibility="gone"
+            tools:background="#E0E0E0"
+            tools:visibility="gone" />
+
+        <!-- 2.2 没有图片时显示的 "+" 号按钮 -->
+        <ImageView
+            android:id="@+id/add_image_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_add_image_placeholder"
+            android:scaleType="centerInside"
+            android:visibility="visible"
+            android:contentDescription="@string/add_image_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 3. 底部图片缩略图导航栏 -->
+    <HorizontalScrollView
+        android:id="@+id/thumbnail_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_preview_container">
+
+        <LinearLayout
+            android:id="@+id/thumbnail_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal">
+
+            <!-- 底部导航栏的 "+" 号按钮 -->
+            <ImageView
+                android:id="@+id/add_image_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_add_image_placeholder"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/add_image" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:layout_marginEnd="12dp">
+
+    <!-- 1. 图片显示区域 -->
+    <ImageView
+        android:id="@+id/thumbnail_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/thumbnail_image_description"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <!-- 2. 删除按钮 (右上角) -->
+    <ImageView
+        android:id="@+id/thumbnail_delete_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="top|end"
+        android:background="#80000000"
+        android:padding="4dp"
+        android:src="@drawable/ic_close"
+        android:contentDescription="@string/delete_image_description" />
+
+</FrameLayout>

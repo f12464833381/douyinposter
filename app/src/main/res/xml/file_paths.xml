@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 1. external-path: 外部存储路径 -->
+    <!-- 作用：允许访问应用在外部存储上（比如SD卡或公共图片目录）的文件。
+              name="external_files" 是一个别名，用于在代码中引用。
+              path="." 表示允许访问这个路径下的所有文件（包括子目录）。 -->
+    <external-path
+        name="external_files"
+        path="." />
+
+    <!-- 2. external-files-path: 外部私有文件路径 (推荐用于相机照片) -->
+    <!-- 作用：指向你的应用在外部存储上的私有目录（Environment.getExternalFilesDir()）。
+              这是存储相机拍摄照片最安全和最常见的位置。 -->
+    <external-files-path
+        name="my_images"
+        path="Pictures" />
+
+    <!-- 3. cache-path: 缓存目录 -->
+    <!-- 作用：允许访问应用的内部缓存目录。 -->
+    <cache-path
+        name="cache_files"
+        path="." />
+
+</paths>
