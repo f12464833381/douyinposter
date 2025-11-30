@@ -54,26 +54,49 @@
 
  MyKotlinApps
 ├── app/
+
 │ ├── src/
+
 │ │ ├── main/
+
 │ │ │ ├── java/com/fengjiandong/douyinposter/
+
 │ │ │ │ ├── adapter/ ─────── # RecyclerView 适配器
+
 │ │ │ │ │ ├── SelectionAdapter.kt # 通用列表选择适配器（话题/用户）
+
 │ │ │ │ │ └── ThumbnailAdapter.kt # 底部缩略图列表适配器（多类型Item、拖拽、删除）
+
 │ │ │ │ ├── data/ ────────── # 数据模型和模拟数据
+
 │ │ │ │ │ ├── MockData.kt # 模拟数据源（话题、用户列表）
+
 │ │ │ │ │ └── User.kt # 用户数据类
+
 │ │ │ │ ├── MainActivity.kt ───── # 主入口，负责图片选择并跳转
+
 │ │ │ │ ├── PostActivity.kt ───── # 核心发布页面，集成所有功能
+
 │ │ │ │ ├── TopicSelectionActivity.kt # 话题选择页面
+
 │ │ │ │ └── UserSelectionActivity.kt # 用户选择页面
+
 │ │ │ ├── res/ ────────────── # 资源文件
+
 │ │ │ │ ├── drawable/ ───── # 可绘制资源（图标、形状）
+
 │ │ │ │ ├── layout/ ─────── # 布局文件（activity_post.xml 是核心复杂布局）
+
 │ │ │ │ ├── mipmap/ ─────── # 应用启动图标
+
 │ │ │ │ ├── values/ ─────── # 字符串、颜色、主题等
+
 │ │ │ │ └── xml/ ────────── # 其他 XML 配置（如 FileProvider）
+
 │ │ │ └── AndroidManifest.xml # 应用清单文件
+
 │ ├── build.gradle.kts (Module: app) # 模块级 Gradle 配置
+
 │ └── ...
+
 └── build.gradle.kts (Project: DouyinPoster) # 项目级 Gradle 配置
