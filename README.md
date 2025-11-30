@@ -52,46 +52,29 @@
 
   - **依赖管理**: Gradle Kotlin DSL ## 项目结构
 
-    MyKotlinApps/
-     ├── app/
-     │   ├── src/
-     │   │   ├── main/
-     │   │   │   ├── java/com/fengjiandong/douyinposter/
-     │   │   │   │   ├── adapter/
-     │   │   │   │   │   ├── SelectionAdapter.kt           # 通用选择列表（话题/用户）适配器
-     │   │   │   │   │   └── ThumbnailAdapter.kt           # 缩略图列表适配器（支持拖拽、删除）
-     │   │   │   │   ├── data/
-     │   │   │   │   │   ├── MockData.kt                   # 模拟数据源（话题、用户列表）
-     │   │   │   │   │   └── User.kt                       # 用户数据类定义
-     │   │   │   │   ├── MainActivity.kt                   # 应用主入口，负责图片选择
-     │   │   │   │   ├── PostActivity.kt                   # 发布作品核心页面，集成所有功能
-     │   │   │   │   ├── TopicSelectionActivity.kt         # 话题选择页面
-     │   │   │   │   └── UserSelectionActivity.kt          # 用户选择页面
-     │   │   │   ├── res/
-     │   │   │   │   ├── drawable/                         # 图标资源
-     │   │   │   │   │   ├── ic_add.xml                    # 添加图标
-     │   │   │   │   │   ├── ic_arrow_back.xml             # 返回图标
-     │   │   │   │   │   ├── ic_chevron_right.xml          # 右箭头图标
-     │   │   │   │   │   ├── ic_close.xml                  # 关闭/删除图标
-     │   │   │   │   │   ├── ic_location_pin.xml           # 位置图标
-     │   │   │   │   │   └── ic_upload_arrow.xml           # 上传箭头图标
-     │   │   │   │   │   └── thumbnail_selected_border.xml # 缩略图选中边框
-     │   │   │   │   ├── layout/                           # 布局文件
-     │   │   │   │   │   ├── activity_main.xml             # 主页面布局
-     │   │   │   │   │   ├── activity_post.xml             # 发布页面布局（核心）
-     │   │   │   │   │   ├── activity_selection.xml        # 通用选择页面布局（话题/用户）
-     │   │   │   │   │   ├── item_add_thumbnail.xml        # 添加缩略图按钮布局
-     │   │   │   │   │   ├── item_selection.xml            # 通用选择列表项布局
-     │   │   │   │   │   └── thumbnail_item.xml            # 单个缩略图项布局（含删除按钮）
-     │   │   │   │   ├── mipmap/                           # 应用图标
-     │   │   │   │   ├── values/                           # 资源值
-     │   │   │   │   │   ├── colors.xml                    # 颜色定义（包含 link_blue）
-     │   │   │   │   │   ├── strings.xml                   # 字符串资源
-     │   │   │   │   │   └── themes/                       # 主题定义
-     │   │   │   │   └── xml/                              # XML 配置
-     │   │   │   │       └── file_paths.xml                # FileProvider 路径配置
-     │   │   │   └── AndroidManifest.xml                   # 应用清单文件
-     │   ├── build.gradle.kts (Module: app)                # 模块级 Gradle 配置
-     │   └── ... (其他自动生成文件和目录)
-     ├── build.gradle.kts (Project: DouyinPoster)           # 项目级 Gradle 配置
-     └── ... (其他Gradle配置文件)
+   MyKotlinApps/
+├── app/
+│ ├── src/
+│ │ ├── main/
+│ │ │ ├── java/com/fengjiandong/douyinposter/
+│ │ │ │ ├── adapter/ # RecyclerView 适配器
+│ │ │ │ │ ├── SelectionAdapter.kt # 通用列表选择适配器（话题/用户）
+│ │ │ │ │ └── ThumbnailAdapter.kt # 底部缩略图列表适配器（多类型Item、拖拽、删除）
+│ │ │ │ ├── data/ # 数据模型和模拟数据
+│ │ │ │ │ ├── MockData.kt # 模拟数据源（话题、用户列表）
+│ │ │ │ │ └── User.kt # 用户数据类
+│ │ │ │ ├── MainActivity.kt # 主入口，负责图片选择并跳转
+│ │ │ │ ├── PostActivity.kt # 核心发布页面，集成所有功能
+│ │ │ │ ├── TopicSelectionActivity.kt # 话题选择页面
+│ │ │ │ └── UserSelectionActivity.kt # 用户选择页面
+│ │ │ ├── res/ # 资源文件
+│ │ │ │ ├── drawable/ # 可绘制资源（图标、形状）
+│ │ │ │ ├── layout/ # 布局文件（activity_post.xml 是核心复杂布局）
+│ │ │ │ ├── mipmap/ # 应用启动图标
+│ │ │ │ ├── values/ # 字符串、颜色、主题等
+│ │ │ │ └── xml/ # 其他 XML 配置（如 FileProvider）
+│ │ │ └── AndroidManifest.xml # 应用清单文件（权限、Activity注册）
+│ ├── build.gradle.kts (Module: app) # 模块级 Gradle 配置（依赖管理）
+│ └── ... (其他自动生成文件和目录)
+├── build.gradle.kts (Project: DouyinPoster) # 项目级 Gradle 配置
+└── ... (其他Gradle配置文件)
